@@ -5,7 +5,7 @@ import { AuthProvider } from "../features/auth/AuthContext";
 export function AppProviders({ children }: { children: React.ReactNode }) {
   return (
     <AuthProvider>
-      <BrowserRouter>{children}</BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>{children}</BrowserRouter>
     </AuthProvider>
   );
 }

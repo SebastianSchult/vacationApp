@@ -1,0 +1,10 @@
+# korrekte MIME-Types
+AddType application/javascript .js
+AddType text/css .css
+
+# SPA-Fallback: wenn Datei/Ordner nicht existiert -> index.html
+RewriteEngine On
+RewriteBase /vacationApp/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /vacationApp/index.html [L]
